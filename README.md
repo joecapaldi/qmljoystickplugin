@@ -1,0 +1,4 @@
+qmljoystickplugin
+=================
+
+QML Joystick plugin
