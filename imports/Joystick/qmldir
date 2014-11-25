@@ -1,0 +1,2 @@
+module Joystick
+plugin qmljoystickplugin
