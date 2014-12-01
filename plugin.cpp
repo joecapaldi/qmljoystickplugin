@@ -4,7 +4,6 @@
 #include <qcoreapplication.h>
 #include "joystick.h"
 
-//![plugin]
 class QExampleQmlPlugin : public QQmlExtensionPlugin
 {
     Q_OBJECT
@@ -17,6 +16,4 @@ public:
         qmlRegisterType<Joystick>(uri, 1, 0, "Joystick");
     }
 };
-//![plugin]
-
 #include "plugin.moc"
