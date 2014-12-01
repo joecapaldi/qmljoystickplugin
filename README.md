@@ -13,9 +13,11 @@ import Joystick 1.0
 
 Joystick {
   number: 0
-  onAxisEvent: console.log("axis", axis, value);
-  onButtonEvent: console.log("button", button, pressed)
-  Component.onCompleted: console.log("Joystick device opened: ", number, name)
+  property bool turnLeft: buttons & (1 << 15)
+  property bool turnRight: buttons & (1 << 13)
+  onAxisEvent: console.log("axis event", axis, value);
+  onButtonEvent: console.log("button event", button, pressed)
+  Component.onCompleted: console.log("Joystick device opened: ", number, name, buttonCount, axisCount)
 }
 ```
 
