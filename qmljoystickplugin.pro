@@ -1,27 +1,26 @@
 TEMPLATE = lib
-CONFIG += plugin
+CONFIG += qt plugin
 QT += qml
 
-DESTDIR = imports/Joystick
-TARGET  = qmljoystickplugin
+TARGET = $$qtLibraryTarget(Joystick)
+TARGETPATH = Joystick
+API_VER=1.0
+
+importPath = $$[QT_INSTALL_QML]/$$replace(TARGETPATH, \\., /).$$API_VER
+target.path = $${importPath}
+
+qmldir.path = $${importPath}
+qmldir.files += $$PWD/qmldir 
 
 SOURCES += plugin.cpp \
     joystick.cpp \
     linuxjoystick.cpp
 
-pluginfiles.files += \
-    imports/Joystick/qmldir \
-    imports/Joystick/Joystick.qml
-
-#qml.files = plugins.qml
-#qml.path += .
-target.path += imports/Joystick
-pluginfiles.path += imports/Joystick
-
-OTHER_FILES += README.md
-
-INSTALLS += target qml pluginfiles
-
 HEADERS += \
     joystick.h \
     linuxjoystick.h
+
+OTHER_FILES += README.md
+
+INSTALLS += target qmldir
+

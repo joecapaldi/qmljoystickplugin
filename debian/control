@@ -1,0 +1,14 @@
+Source: qmljoystickplugin
+Section: libs
+Priority: extra
+Maintainer: Ville Ranki <ville.ranki@iki.fi>
+Build-Depends: cdbs, debhelper (>= 7.0.50~), linux-libc-dev
+Standards-Version: 3.9.6
+
+Package: qmljoystickplugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Joystick support for QML applications
+ Exposes (Linux) joysticks to be used in QML applications
+ and games.
+
